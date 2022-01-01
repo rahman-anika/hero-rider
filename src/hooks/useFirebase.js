@@ -122,7 +122,7 @@ const useFirebase = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://evening-harbor-12084.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
 
@@ -143,7 +143,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, type, age, phone, address, area, profilePicture, nidPicture, license, carInformation, category, status, method) => {
         const user = { email, displayName, type, age, phone, address, area, profilePicture, nidPicture, license, carInformation, category, status };
-        fetch('http://localhost:5000/users', {
+        fetch('https://evening-harbor-12084.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -155,7 +155,7 @@ const useFirebase = () => {
 
     const saveLearner = (email, displayName, type, age, phone, address, area, profilePicture, nidPicture, category, status, method) => {
         const user = { email, displayName, type, age, phone, address, area, profilePicture, nidPicture, category, status };
-        fetch('http://localhost:5000/users', {
+        fetch('https://evening-harbor-12084.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

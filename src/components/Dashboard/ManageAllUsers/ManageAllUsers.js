@@ -18,23 +18,13 @@ const ManageAllUsers = () => {
 
 
     // all users load from database/server
-    // useEffect(() => {
-    //     fetch("http://localhost:5000/allRegisteredUsers")
-    //         .then((response) => response.json())
-    //         .then((data) => setOrders(data));
-    // }, []);
-
     useEffect(() => {
-        fetch(`http://localhost:5000/allRegisteredUsers?page=${page}&&size=${size}`)
-            .then(res => res.json())
-            .then(data => {
-                setOrders(data);
-                setDisplayProducts(data);
-                const count = data.count;
-                const pageNumber = Math.ceil(count / size);
-                setPageCount(pageNumber);
-            });
-    }, [page]);
+        fetch("https://evening-harbor-12084.herokuapp.com/allRegisteredUsers")
+            .then((response) => response.json())
+            .then((data) => setOrders(data));
+    }, []);
+
+
 
 
     const handleSearch = event => {

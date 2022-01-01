@@ -18,7 +18,7 @@ const UpdateStatus = () => {
     // load single booking by booking id from database/server 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleProfile/${orderId}`)
+        fetch(`https://evening-harbor-12084.herokuapp.com/singleProfile/${orderId}`)
             .then((res) => res.json())
             .then((data) => setBooking(data));
     }, [orderId, isUpdate]);
@@ -35,7 +35,7 @@ const UpdateStatus = () => {
     // handle update 
 
     const onSubmit = (data) => {
-        fetch(`http://localhost:5000/update/${orderId}`, {
+        fetch(`https://evening-harbor-12084.herokuapp.com/update/${orderId}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

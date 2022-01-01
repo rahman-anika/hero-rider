@@ -33,7 +33,7 @@ const Dashboard = () => {
     const [profile, setProfile] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myProfile/${email}`)
+        fetch(`https://evening-harbor-12084.herokuapp.com/myProfile/${email}`)
             .then((res) => res.json())
             .then((data) => setProfile(data));
     }, [email]);
